@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altavoces</title>
+    <link rel="stylesheet" href="CSS/altavoz.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/login}"><i class="far fa-user"></i>Iniciar sesión</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Cerrar Sesion</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Registrarse</a></li>
+
+        </ul>
+    </nav>
+</header>
+<nav id="footer-nav">
+    <div id="logo-text-container">
+        <img src="imagenes/LogoSample_.jpg" alt="Logo" id="footer-logo">
+        <p id="footer-text">Computadores y accesorios a tu alcance</p>
+    </div>
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar...">
+        <button type="submit" id="search-button">Buscar</button>
+    </div>
+</nav>
+
+
+<body>
+<h1>Altavoces</h1>
+<div class="altavoz-container">
+    <div class="altavoz-item" onclick="showDetails('altavoz1')">
+        <img src="imagenes/alt1.png" alt="altavoz 1">
+        <h2>Logitech Z407 - Sistema de Parlantes 2.1 Subwoofe</h2>
+        <button onclick="addToCart('altavoz1 , event')">Agregar al carrito</button>
+    </div>
+
+
+    <div class="altavoz-item" onclick="showDetails('altavoz2')">
+        <img src="imagenes/disc2.png" alt="altavoz 2">
+        <h2>Unidad Solida Kingston 2.5 A400</h2>
+        <button onclick="addToCart('altavoz2')">Agregar al carrito</button>
+    </div>
+    <div class="altavoz-item" onclick="showDetails('altavoz3')">
+        <img src="imagenes/alt3.jpg" alt="altavoz 3">
+        <h2>Logitech Z906, Altavoces 5.1</h2>
+        <button onclick="addToCart('altavoz3')">Agregar al carrito</button>
+    </div>
+    <div class="altavoz-item" onclick="showDetails('altavoz4')">
+        <img src="imagenes/alt4.jpg" alt="altavoz 4">
+        <h2>Logitech Combo: Altavoces Z906 </h2>
+        <button onclick="addToCart('altavoz4')">Agregar al carrito</button>
+    </div>
+    <div class="altavoz-item" onclick="showDetails('altavoz5')">
+        <img src="imagenes/disc5.jpg" alt="altavoz 5">
+        <h2>Genius Mini Barra Sonido Soundbar 100 Usb</h2>
+        <button onclick="addToCart('altavoz5')">Agregar al carrito</button>
+    </div>
+    <!-- Agregar más artículos según sea necesario -->
+</div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-details"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda online dedicada a ofrecer los mejores productos a nuestros clientes. Nos enfocamos en la calidad y la satisfacción del cliente.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>luiscychasoy993@gmail.com</li>
+                <li>Teléfono: +0573122150565</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Dirección</h3>
+            <p>Calle 71d, #31ºB<br>
+                2024 Medellin Colombia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="altavoz.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios PC</title>
+    <link rel="stylesheet" href="CSS/accesorios.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/login}"><i class="far fa-user"></i>Iniciar sesión</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Cerrar Sesion</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Registrarse</a></li>
+
+        </ul>
+    </nav>
+</header>
+<nav id="footer-nav">
+    <div id="logo-text-container">
+        <img src="imagenes/LogoSample_.jpg" alt="Logo" id="footer-logo">
+        <p id="footer-text">Computadores y accesorios a tu alcance</p>
+    </div>
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar...">
+        <button type="submit" id="search-button">Buscar</button>
+    </div>
+</nav>
+
+
+<body>
+<h1>Accesorios</h1>
+<div class="accesories-container">
+    <div class="accesories-item" onclick="showDetails('accesories1')">
+        <img src="imagenes/ventilador.png" alt="accesories1">
+        <h2>Xtech - Notebook stand - XTA-160</h2>
+        <button onclick="addToCart('accesories1, event')">Agregar al carrito</button>
+    </div>
+
+
+    <div class="accesories-item" onclick="showDetails('accesories2')">
+        <img src="imagenes/mando.png" alt="accesories 2">
+        <h2>Control Inalámbrico Dualsense Galactic Purple G0006617</h2>
+        <button onclick="addToCart('accesories2')">Agregar al carrito</button>
+    </div>
+    <div class="accesories-item" onclick="showDetails('accesories3')">
+        <img src="imagenes/diademas.png" alt="accesories 3">
+        <h2>Logitech G G Series G435 G435</h2>
+        <button onclick="addToCart('accesories3')">Agregar al carrito</button>
+    </div>
+    <div class="accesories-item" onclick="showDetails('accesories4')">
+        <img src="imagenes/raton.png" alt="accesories 4">
+        <h2>Wireless USB Gaming Mouse</h2>>
+        <button onclick="addToCart('accesories4')">Agregar al carrito</button>
+    </div>
+    <div class="accesories-item" onclick="showDetails('accesories5')">
+        <img src="imagenes/pantalla.png" alt="accesories 5">
+        <h2>Monitor 49 Odyssey G9 OLED</h2>
+        <button onclick="addToCart('accesories5')">Agregar al carrito</button>
+    </div>
+    <!-- Agregar más artículos según sea necesario -->
+</div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-details"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda online dedicada a ofrecer los mejores productos a nuestros clientes. Nos enfocamos en la calidad y la satisfacción del cliente.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>luiscychasoy993@gmail.com</li>
+                <li>Teléfono: +0573122150565</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Dirección</h3>
+            <p>Calle 71d, #31ºB<br>
+                2024 Medellin Colombia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="accesorios.js"></script>
+</body>
+</html>

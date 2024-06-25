@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/crudproduct.css">
+</head>
+<body>
+<div class="container">
+    <h2>Formulario de Producto</h2>
+    <form action="/guadarproductos" method="post" class="form">
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" readonly class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Descripción</label>
+            <input type="text" name="descripcion" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="number" name="precio" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Cantidad en</label>
+            <input type="text" name="stock" class="form-control">
+        </div>
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+
+
+
+    <h2>Lista de Productos</h2>
+    <table id="mitabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad en Stock</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        
+        <!-- este tbdy me muetras la interfaz de los datos que se van a recibir esta va en -->
+        <tbody>
+        <tr th:each="product: ${productosFront}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.nombre}"></td>
+            <td th:text="${product.descripcion}"></td>
+            <td th:text="${product.precio}"></td>
+            <td th:text="${product.stock}"></td>
+
+            <!--este es la parte del scripo-->
+            <td>
+                <input type="submit" value="Modificar" onclick="seleccionarModificar()">
+                <input type="submit" value="Eliminar" onclick="seleccionarEliminar()">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button><a th:href="@{/}">Volver</a></button>
+</div>
+
+<script src="ManejoUsuarios.js"></script>
+</body>
+</html>

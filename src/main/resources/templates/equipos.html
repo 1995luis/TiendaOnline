@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Portátiles</title>
+    <link rel="stylesheet" href="CSS/equipos.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/login}"><i class="far fa-user"></i>Iniciar sesión</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Cerrar Sesion</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Registrarse</a></li>
+
+        </ul>
+    </nav>
+</header>
+<nav id="footer-nav">
+    <div id="logo-text-container">
+        <img src="imagenes/LogoSample_.jpg" alt="Logo" id="footer-logo">
+        <p id="footer-text">Computadores y accesorios a tu alcance</p>
+    </div>
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar...">
+        <button type="submit" id="search-button">Buscar</button>
+    </div>
+</nav>
+
+
+<body>
+<h1>Equipo Portátiles</h1>
+<div class="laptop-container">
+    <div class="laptop-item" onclick="showDetails('laptop1')">
+        <img src="imagenes/asus.png" alt="Laptop 1">
+        <h2>Marca Asus</h2>
+        <button onclick="addToCart('laptop1, event')">Agregar al carrito</button>
+    </div>
+
+
+    <div class="laptop-item" onclick="showDetails('laptop2')">
+        <img src="imagenes/asus2.png" alt="Laptop 2">
+        <h2>ASUS ZenBook 14</h2>
+        <button onclick="addToCart('laptop2')">Agregar al carrito</button>
+    </div>
+    <div class="laptop-item" onclick="showDetails('laptop3')">
+        <img src="imagenes/EquHP.png" alt="Laptop 3">
+        <h2>ASUS Vivobook S15 (S5507)</h2>
+        <button onclick="addToCart('laptop3')">Agregar al carrito</button>
+    </div>
+    <div class="laptop-item" onclick="showDetails('laptop4')">
+        <img src="imagenes/lenovo.png" alt="Laptop 4">
+        <h2>ASUS X515</h2>
+        <button onclick="addToCart('laptop4')">Agregar al carrito</button>
+    </div>
+    <div class="laptop-item" onclick="showDetails('laptop5')">
+        <img src="imagenes/lenovo2.png" alt="Laptop 5">
+        <h2>ASUS Zenbook S 16 (UM5606)</h2>
+        <button onclick="addToCart('laptop5')">Agregar al carrito</button>
+    </div>
+    <!-- Agregar más artículos según sea necesario -->
+</div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-details"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda online dedicada a ofrecer los mejores productos a nuestros clientes. Nos enfocamos en la calidad y la satisfacción del cliente.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>luiscychasoy993@gmail.com</li>
+                <li>Teléfono: +0573122150565</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Dirección</h3>
+            <p>Calle 71d, #31ºB<br>
+                2024 Medellin Colombia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="equipo.js"></script>
+</body>
+</html>

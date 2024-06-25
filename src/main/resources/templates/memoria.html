@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorias Ram</title>
+    <link rel="stylesheet" href="CSS/ram.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/login}"><i class="far fa-user"></i>Iniciar sesión</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Cerrar Sesion</a></li>
+
+            <li><a th:href="@{/logout}"><i class="far fa-circle-user"></i>Registrarse</a></li>
+
+        </ul>
+    </nav>
+</header>
+<nav id="footer-nav">
+    <div id="logo-text-container">
+        <img src="imagenes/LogoSample_.jpg" alt="Logo" id="footer-logo">
+        <p id="footer-text">Computadores y accesorios a tu alcance</p>
+    </div>
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar...">
+        <button type="submit" id="search-button">Buscar</button>
+    </div>
+</nav>
+
+
+<body>
+<h1>Memorias RAM</h1>
+<div class="ram-container">
+    <div class="ram-item" onclick="showDetails('ram1')">
+        <img src="imagenes/ram1.jpg" alt="ram 1">
+        <h2>Memoria RAM Gamer Crucial</h2>
+        <button onclick="addToCart('ram1, event')">Agregar al carrito</button>
+    </div>
+
+
+    <div class="ram-item" onclick="showDetails('ram2')">
+        <img src="imagenes/ram2.png" alt="ram 2">
+        <h2>Memoria Ram Ddr4 Crucial</h2>
+        <button onclick="addToCart('ram2')">Agregar al carrito</button>
+    </div>
+    <div class="ram-item" onclick="showDetails('ram3')">
+        <img src="imagenes/ram3.jpg" alt="ram 3">
+        <h2>Memoria RAM ValueRAM gamer Kingston</h2>
+        <button onclick="addToCart('ram3')">Agregar al carrito</button>
+    </div>
+    <div class="ram-item" onclick="showDetails('ram4')">
+        <img src="imagenes/ram4.jpg" alt="ram 4">
+        <h2>Memoria RAM Fury gamer color negro</h2>
+        <button onclick="addToCart('ram4')">Agregar al carrito</button>
+    </div>
+    <div class="ram-item" onclick="showDetails('ram 5')">
+        <img src="imagenes/ram5.jpg" alt="ram 5">
+        <h2>ASUS Zenbook S 16 (UM5606)</h2>
+        <button onclick="addToCart('ram5')">Agregar al carrito</button>
+    </div>
+    <!-- Agregar más artículos según sea necesario -->
+</div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-details"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda online dedicada a ofrecer los mejores productos a nuestros clientes. Nos enfocamos en la calidad y la satisfacción del cliente.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>luiscychasoy993@gmail.com</li>
+                <li>Teléfono: +0573122150565</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Dirección</h3>
+            <p>Calle 71d, #31ºB<br>
+                2024 Medellin Colombia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="memoria.js"></script>
+</body>
+</html>

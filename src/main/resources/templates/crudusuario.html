@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de Usuarios</title>
+    <link rel="stylesheet" href="CSS/crudusuarios.css">
+<!--    <link rel="stylesheet" href="CSS/styles.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Lista de Usuarios</h2>
+    <table id="mitabla" class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRES COMPLETO</th>
+            <th>EMAIL</th>
+            <th>TELOFONO</th>
+            <th>DIRECCION</th>
+            <th>CIUDAD</th>
+            <th>METODO DE PAGO</th>
+            <th>OBSERVACIONES</th>
+
+            <th>ACCIONES</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${usuariosParaFront}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.nombre}"></td>
+            <td th:text="${user.email}"></td>
+
+            <td th:text="${user.telefono}"></td>
+            <td th:text="${user.direccion}"></td>
+            <td th:text="${user.ciudad}"></td>
+            <td th:text="${user.metodo_pago}"></td>
+            <td th:text="${user.observaciones}"></td>
+            <td>
+                <button class="btn btn-warning" >Modificar</button>
+                <button class="btn btn-danger" >Eliminar</button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <button class="btn btn-primary" onclick="openModal('agregarModal')">Agregar Usuario</button>
+</div>
+
+<!-- Modal Agregar -->
+<div id="agregarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('agregarModal')">&times;</span>
+        <h2>Agregar Usuario</h2>
+        <form action="/guardarusuarios" method="post">
+            <label>Nombres</label>
+            <input type="text" name="nombre">
+            <label>Apellidos</label>
+            <input type="text" name="apellido">
+            <label>Teléfono</label>
+            <input type="text" name="telefono">
+
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Editar -->
+<div id="editarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('editarModal')">&times;</span>
+        <h2>Editar Usuario</h2>
+        <form action="actualizarusuarios" method="post">
+            <label>ID</label>
+            <input type="text" id="idEditar" name="id" readonly>
+            <label>Nombres</label>
+            <input type="text" id="nombreEditar" name="nombre">
+            <label>Apellidos</label>
+            <input type="text" id="apellidoEditar" name="apellido">
+            <label>Teléfono</label>
+            <input type="text" id="telefonoEditar" name="telefono">
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Eliminar -->
+<div id="eliminarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('eliminarModal')">&times;</span>
+        <h2>Eliminar Usuario</h2>
+        <form action="eliminarusuarios" method="post">
+            <label>ID</label>
+            <input type="text" id="idEliminar" name="id" readonly>
+            <label>Nombres</label>
+            <input type="text" id="nombreEliminar" readonly>
+            <label>Apellidos</label>
+            <input type="text" id="apellidoEliminar" readonly>
+            <label>Teléfono</label>
+            <input type="text" id="telefonoEliminar" readonly>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+    </div>
+</div>
+
+<script src="ManejoUsuarios2.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
